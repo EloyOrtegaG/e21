@@ -1,7 +1,10 @@
 
-$primary: #000000;
-$secondary: #E7000A;
+$primary: #24B32B;
+//$secondary: #E7000A;
+$dark: #000;
+$light: #F4F8FA;
 
+$info:blue;
 /*$theme-colors: (
   "primary":   $primary,
   "secondary": $secondary,
@@ -23,7 +26,7 @@ $grid-breakpoints: (
 	lg: 992px,
 	xl: 1200px,
 	xxl: 1400px,
-	xxxl: 1680px
+	//xxxl: 1680px
 );
 $container-max-widths: (
 	sm: 540px,
@@ -31,7 +34,7 @@ $container-max-widths: (
 	lg: 990px,
 	xl: 1140px,
 	xxl: 1320px,
-	xxxl: 1620px
+	//xxxl: 1620px
 );
 
 @media (min-width: breakpoint-min(xxl)) {
@@ -41,12 +44,12 @@ $container-max-widths: (
 }
 
 // Fonts
-$font-family-sans-serif:Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+/*$font-family-sans-serif:Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
 $font-family-serif: 'Roboto Slab', Georgia, "Times New Roman", Times, serif;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-$font-family-base: $font-family-sans-serif;
+$font-family-base: $font-family-sans-serif;*/
 
-$link-decoration: none;
+//$link-decoration: none;
 
 
 /*@import "./node_modules/bootstrap/scss/variables";
@@ -56,3 +59,116 @@ $link-decoration: none;
 
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
+
+
+/*General*/
+
+@import url(./node_modules/@fontsource/montserrat);
+@import url(./node_modules/@fontsource/source-sans-pro);
+@import "./node_modules/material-icons/iconfont/material-icons.css";
+
+:root {
+
+    --bs-link-color: blue;
+    --bs-link-hover-color: black;
+    .bg-dark {
+        --bs-link-color: white;
+        --bs-link-hover-color: $primary;
+    }   
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+}
+.btn {
+    font-weight: 500;
+}
+
+header {
+    .topHeader {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+    border-bottom: 8px solid $primary;
+    margin-bottom: 2em;
+}
+
+footer {
+    border-top: 8px solid $primary;
+}
+
+
+
+
+
+
+/*Forms*/
+ input[type="text"].form-control, input[type="email"].form-control {
+        border-color: $dark;
+        border-radius: 0;
+        border-width: 2px;
+    }
+.form-label {
+    font-weight: bold;
+}
+legend {
+    @media (min-width:1200px) {
+        font-size: 1.25rem;
+    }
+}
+.btn {
+    --bs-btn-border-radius:0;
+}
+    
+
+/*Conectar*/
+ul.nav-tabs.conectarTabs {
+    justify-content: stretch;
+    width: 100%;
+    border-bottom: 0;          
+    padding: 0;
+    
+            
+    li {
+        flex: 1;
+        button.nav-link {
+            width: 100%;
+            border-radius: 0;
+            color: lighten($dark,50%);
+            font-weight: 600;
+            border-width: 4px 0 0 0;
+            &:hover {
+                border-width: 4px 0 0 0;
+                //border-color: lighten($primary,15%);
+                background-color:$light;
+                border-color: white;
+            }
+            &.active {
+                background-color:$light;
+                border-width: 4px 0 0 0;
+                border-color: $primary;
+                color: $dark;
+
+            }
+        }
+    }
+}
+
+
+
+/*Helpers*/
+
+$widths: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100);
+
+@each $width in $widths {
+.mw-#{$width} {
+  max-width: $width + rem !important;
+  
+}
+}
