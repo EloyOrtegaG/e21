@@ -1,0 +1,58 @@
+
+$primary: #000000;
+$secondary: #E7000A;
+
+/*$theme-colors: (
+  "primary":   $primary,
+  "secondary": $secondary,
+  "secondary-darken": $secondary-darken,
+  "success":   $success,
+  "info":      $info,
+  "warning":   $warning,
+  "danger":    $danger,
+  "light":     $light,
+  "dark":      $dark
+
+);*/
+
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+	xxxl: 1680px
+);
+$container-max-widths: (
+	sm: 540px,
+	md: 758px,
+	lg: 990px,
+	xl: 1140px,
+	xxl: 1320px,
+	xxxl: 1620px
+);
+
+@media (min-width: breakpoint-min(xxl)) {
+	body.single .container {
+			max-width: 1200px;		
+	}
+}
+
+// Fonts
+$font-family-sans-serif:Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+$font-family-serif: 'Roboto Slab', Georgia, "Times New Roman", Times, serif;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base: $font-family-sans-serif;
+
+$link-decoration: none;
+
+
+/*@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/mixins";
+@import "./node_modules/bootstrap/scss/root";*/
+
+
+
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
