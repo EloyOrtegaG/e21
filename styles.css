@@ -10881,6 +10881,16 @@ footer {
   border-top: 8px solid #24B32B;
 }
 
+/*lAYOUT*/
+.todo {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.todo main {
+  flex-grow: 1;
+}
+
 /*Forms*/
 input[type=text].form-control, input[type=email].form-control {
   border-color: #000;
